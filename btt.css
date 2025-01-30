@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url("btt1.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: "Press Start 2P", sans-serif;
+  color: white;
+}
+
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+}
+
+.glow {
+  color: white;
+  font-size: 45px;
+  text-shadow: 0 0 15px gray, 0 0 10px white, 0 0 20px green;
+}
+
+.container {
+  width: 1000px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.input-section {
+  width: 35%; /* Adjust width as needed */
+  height: 40px;
+  margin-left: 200px; /* Space from the left */
+  margin-top: 80px;
+}
+
+.input {
+  margin-bottom: 10px;
+  width: 80%; /* Increased width */
+  height: 50px; /* Increased height */
+  font-size: 20px; /* Larger font for better readability */
+  font-family: "Press Start 2P", sans-serif;
+  color: gray;
+  padding: 5px; /* Added padding for a better look */
+  border: 5px solid gray; /* Optional: Border for better visibility */
+  border-radius: 5px; /* Optional: Rounded corners */
+  box-sizing: border-box; /* Ensure padding doesn't affect dimensions */
+}
+
+.checkbox-label {
+  width: 20%;
+  margin-left: 0;
+  width: 30%;
+}
+
+#tree-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%; /* Adjust width as needed */
+  height: 500px;
+  background-color: white;
+  border-radius: 10px;
+  margin-right: 200px; /* Space from the right */
+  margin-top: 20px;
+  padding: 20px;
+  overflow: hidden;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+#tree-visualization {
+  width: 100%; /* Take full width of the container */
+  height: 300px; /* Reduced height to accommodate traversals */
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#traversals {
+  width: 100%;
+  color: black;
+  font-size: 12px;
+}
+
+.vis-network {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.traversal-node {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #6ca0dc;
+  color: white;
+  animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animation to show the message */
+@keyframes showMessage {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+    border-color: red;
+  }
+  50% {
+    opacity: 0.2;
+    border-color: transparent;
+  }
+  100% {
+    opacity: 1;
+    border-color: red;
+  }
+}
+
+.blinking {
+  animation: blink 1s infinite;
+}
+
+#error-message {
+  color: white;
+  display: none;
+  animation: blink 1s infinite;
+}
+
+/* Apply the animation */
+#message.show {
+  animation: showMessage 2s forwards;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input {
+  margin-bottom: 10px;
+  width: 50%; /* Full width of the input section */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: white;
+  font-family: "Press Start 2P", sans-serif;
+  color: green;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  transform: translateY(-10px);
+  background-color: var(--clr-accent);
+  color: var(--clr-light);
+}
+
+.error {
+  width: 80%;
+  margin-left: -15px;
+  text-align: center;
+  margin-top: 80px;
+  font-size: 18px;
+  color: white;
+  display: none;
+  background-color: red;
+  border: 5px, solid red;
+  border-radius: 5px;
+  padding: 15px;
+}
